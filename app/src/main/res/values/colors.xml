@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="mainColor">#00C8F6</color>
+    <color name="button_kakao">#F4E415</color>
+    <color name="button_naver">#04C45C</color>
+    <color name="button_google">#E14C34</color>
 </resources>

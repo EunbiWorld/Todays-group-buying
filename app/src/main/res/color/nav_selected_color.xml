@@ -1,0 +1,6 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 선택 되었을 때의 색상 -->
+    <item android:color="@color/mainColor" android:state_checked="true" />
+    <!-- 선택 되지 않았을 때의 색상 -->
+    <item android:color="@color/black" />
+</selector>
