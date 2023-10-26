@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_video"
+        android:title="비디오"
+        android:icon="@drawable/video" />
+
+    <item
+        android:id="@+id/navigation_bulletin"
+        android:title="게시글"
+        android:icon="@drawable/bulletin" />
+
+    <item
+        android:id="@+id/navigation_home"
+        android:title="홈"
+        android:icon="@drawable/home_blue" />
+
+    <item
+        android:id="@+id/navigation_heart"
+        android:title="찜하기"
+        android:icon="@drawable/heart" />
+
+    <item
+        android:id="@+id/navigation_setting"
+        android:title="더보기"
+        android:icon="@drawable/setting" />
+</menu>
