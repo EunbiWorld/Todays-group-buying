@@ -10,20 +10,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <Button
+
+        <ImageButton
             android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/baseline_arrow_back_24"/>
+            android:layout_height="match_parent"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:padding="0sp"
+            android:scaleType="centerCrop"
+            android:background="#00ff0000"/>
+
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="로그인"
             android:textAlignment="center"
-            android:layout_marginStart="-60dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="-50dp"
             android:textStyle="bold"
             android:textSize="30dp"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -33,22 +38,23 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="100dp">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="이메일"
             android:textSize="20dp"
             android:paddingBottom="20dp"/>
+
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:ems="10"
             android:inputType="textEmailAddress"
             android:hint="E-mail"
             android:minWidth="50dp"
             android:minHeight="50dp"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -56,14 +62,15 @@
             android:textSize="20dp"
             android:paddingBottom="20dp"
             android:paddingTop="50dp"/>
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:inputType="textPassword"
             android:hint="Password"
             android:minWidth="48dp"
             android:minHeight="48dp"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -72,25 +79,29 @@
         android:orientation="horizontal"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp">
+
         <CheckBox
             android:id="@+id/checkBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="로그인 유지" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="비밀번호 찾기"
             android:layout_marginTop="15dp"/>
+
     </LinearLayout>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginTop="40dp"
-        android:text="로그인"
-        />
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="로그인"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -106,12 +117,14 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:background="#787878"/>
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textAlignment="center"
             android:text="SNS 로그인"/>
+
         <View
             android:layout_width="0dp"
             android:layout_height="2dp"
@@ -129,6 +142,8 @@
         android:text="카카오 로그인"
         android:textColor="@color/black"
         android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:backgroundTint="#00ff00"/>
 
     <TextView
