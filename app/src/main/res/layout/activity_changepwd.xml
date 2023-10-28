@@ -67,7 +67,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="인증코드"
+            android:text="새 비밀번호 확인"
             android:textSize="20dp"
             android:paddingBottom="5dp"
             android:paddingTop="50dp"/>
@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:hint="Numder code"/>
+            android:hint="New password"/>
 
         <Button
             android:layout_width="match_parent"
@@ -84,7 +84,7 @@
             android:layout_marginTop="80dp"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="10dp"
-            android:text="인증코드 확인"
+            android:text="비밀번호 변경"
             />
 
     </LinearLayout>
