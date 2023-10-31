@@ -6,4 +6,6 @@
     <color name="button_kakao">#F4E415</color>
     <color name="button_naver">#04C45C</color>
     <color name="button_google">#E14C34</color>
+    <color name="button_GoLogin">#DFF2FC</color>
+    <color name="button_GoSignup">#00C8F6</color>
 </resources>
