@@ -12,8 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GroupBuying"
         tools:targetApi="31">
-        <activity
-            android:name=".MainActivity"
+        <activity android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,8 +20,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
         <activity android:name=".SettingActivity"/>
         <activity android:name=".IDLoginActivity"/>
+        <activity android:name=".SignUpActivity"/>
     </application>
 
 </manifest>
