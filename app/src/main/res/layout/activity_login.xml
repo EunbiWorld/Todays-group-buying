@@ -49,36 +49,28 @@
 
     </LinearLayout>
 
-    <!-- 카카오톡 로그인 버튼 -->
+    <!-- 로그인 버튼 -->
     <Button
-        android:id="@+id/kakaoLoginButton"
+        android:id="@+id/GoLoginButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="카카오톡 로그인"
+        android:text="로그인"
         android:textColor="@color/white"
         android:background="@drawable/button_background"
         android:backgroundTint="@color/button_kakao"
         android:layout_marginBottom="12dp" />
 
-    <!-- 네이버 로그인 버튼 -->
+    <!-- 회원가입 버튼 -->
     <Button
-        android:id="@+id/naverLoginButton"
+        android:id="@+id/GoSignupButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="네이버 로그인"
+        android:text="회원가입"
         android:textColor="@color/white"
         android:background="@drawable/button_background"
         android:backgroundTint="@color/button_naver"
         android:layout_marginBottom="12dp" />
 
-    <!-- 구글 로그인 버튼 -->
-    <Button
-        android:id="@+id/googleLoginButton"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:text="구글 로그인"
-        android:textColor="@color/white"
-        android:background="@drawable/button_background"
-        android:backgroundTint="@color/button_google" />
+
 
 </LinearLayout>

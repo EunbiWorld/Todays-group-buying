@@ -1,6 +1,3 @@
 <resources>
     <string name="app_name">Group Buying</string>
-    <string name="residence_types">거주 유형을 선택해주세요.</string>
-    <string name="residence_years">거주 년도을 선택해주세요.</string>
-    <string name="floor_levels">거주 층을 선택해주세요.</string>
 </resources>
