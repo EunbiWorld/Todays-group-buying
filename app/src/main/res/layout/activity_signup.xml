@@ -43,6 +43,7 @@
             android:paddingBottom="5dp"/>
 
         <EditText
+            android:id="@+id/Sign_UserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -57,6 +58,7 @@
             android:paddingTop="20dp"/>
 
         <EditText
+            android:id="@+id/Sign_Knikname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -71,6 +73,7 @@
             android:paddingTop="20dp"/>
 
         <EditText
+            android:id="@+id/Sign_Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -85,6 +88,7 @@
             android:paddingTop="20dp"/>
 
         <EditText
+            android:id="@+id/Sign_PW"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -99,6 +103,7 @@
             android:paddingTop="20dp"/>
 
         <EditText
+            android:id="@+id/Sign_ConfirmPW"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -113,6 +118,7 @@
             android:paddingTop="20dp"/>
 
         <EditText
+            android:id="@+id/Sign_PhoneNum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone"
@@ -120,12 +126,13 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/Do_SignUp"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginTop="60dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="10dp"
-        android:text="로그인"
+        android:text="회원가입"
         />
 
     <TextView

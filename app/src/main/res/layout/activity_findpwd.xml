@@ -44,12 +44,14 @@
             android:paddingTop="50dp"/>
 
         <EditText
+            android:id="@+id/find_Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:hint="Hello@email.com"/>
 
         <Button
+            android:id="@+id/send_FindCode"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="50dp"
@@ -67,12 +69,14 @@
             android:paddingTop="80dp"/>
 
         <EditText
+            android:id="@+id/find_EnterCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:hint="Numder code"/>
 
         <Button
+            android:id="@+id/find_CheckCode"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="50dp"

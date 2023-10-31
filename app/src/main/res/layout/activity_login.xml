@@ -51,7 +51,7 @@
 
     <!-- 로그인 버튼 -->
     <Button
-        android:id="@+id/LoginButton"
+        android:id="@+id/GoLoginButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="로그인"
@@ -62,7 +62,7 @@
 
     <!-- 회원가입 버튼 -->
     <Button
-        android:id="@+id/SignupButton"
+        android:id="@+id/GoSignupButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="회원가입"

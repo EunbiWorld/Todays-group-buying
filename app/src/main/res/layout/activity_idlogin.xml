@@ -47,6 +47,7 @@
             android:paddingBottom="20dp"/>
 
         <EditText
+            android:id="@+id/edt_LoginEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -64,6 +65,7 @@
             android:paddingTop="50dp"/>
 
         <EditText
+            android:id="@+id/edt_LoginPW"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -96,6 +98,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btn_DoLogin"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginTop="40dp"
