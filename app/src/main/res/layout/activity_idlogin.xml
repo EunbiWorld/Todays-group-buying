@@ -104,6 +104,8 @@
         android:layout_marginTop="40dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@color/button_GoSignup"
         android:text="로그인"/>
 
     <LinearLayout
@@ -147,7 +149,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:backgroundTint="#00ff00"/>
+        android:background="@drawable/button_background"
+        android:backgroundTint="@color/button_kakao"/>
 
     <TextView
         android:layout_width="wrap_content"
