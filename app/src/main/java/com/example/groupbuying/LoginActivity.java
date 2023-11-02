@@ -16,15 +16,15 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // 3초 후에 MainActivity로 전환
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        }, SPLASH_TIME_OUT);
+//        // 3초 후에 MainActivity로 전환
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//        }, SPLASH_TIME_OUT);
 
 
         //로그인 버튼 클릭시 로그인 화면으로 이동
@@ -33,16 +33,17 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), IDLoginActivity.class);
+                startActivity(intent); // Intent를 시작하여 새로운 화면으로 전환
             }
         });
 
-
         //회원가입 버튼 클릭시 회원가입 화면으로 이동
         Button signupbutton = (Button) findViewById(R.id.GoSignupButton);
-        loginbutton.setOnClickListener(new View.OnClickListener() {
+        signupbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
+                startActivity(intent); // Intent를 시작하여 새로운 화면으로 전환
             }
         });
     }
