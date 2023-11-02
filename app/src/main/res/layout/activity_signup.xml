@@ -40,6 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="이름"
+            android:textColor="@color/black"
             android:textSize="20dp"
             android:paddingBottom="5dp"/>
 
@@ -54,6 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="닉네임"
+            android:textColor="@color/black"
             android:textSize="20dp"
             android:paddingBottom="5dp"
             android:paddingTop="20dp"/>
@@ -69,6 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="이메일"
+            android:textColor="@color/black"
             android:textSize="20dp"
             android:paddingBottom="5dp"
             android:paddingTop="20dp"/>
@@ -84,6 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="비밀번호"
+            android:textColor="@color/black"
             android:textSize="20dp"
             android:paddingBottom="5dp"
             android:paddingTop="20dp"/>
@@ -99,6 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="비밀번호 확인"
+            android:textColor="@color/black"
             android:textSize="20dp"
             android:paddingBottom="5dp"
             android:paddingTop="20dp"/>
@@ -114,6 +119,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="전화번호"
+            android:textColor="@color/black"
             android:textSize="20dp"
             android:paddingBottom="5dp"
             android:paddingTop="20dp"/>

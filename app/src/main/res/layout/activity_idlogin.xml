@@ -45,6 +45,7 @@
             android:layout_height="match_parent"
             android:text="이메일"
             android:textSize="20dp"
+            android:textColor="@color/black"
             android:paddingBottom="20dp"/>
 
         <EditText
@@ -61,6 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="비밀번호"
+            android:textColor="@color/black"
             android:textSize="20dp"
             android:paddingBottom="20dp"
             android:paddingTop="50dp"/>

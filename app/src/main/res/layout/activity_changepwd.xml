@@ -41,6 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="현재 비밀번호"
+            android:textColor="@color/black"
             android:textSize="20dp"
             android:paddingBottom="5dp"
             android:paddingTop="10dp"/>
@@ -56,6 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="새 비밀번호"
+            android:textColor="@color/black"
             android:textSize="20dp"
             android:paddingBottom="5dp"
             android:paddingTop="50dp"/>
@@ -71,6 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="새 비밀번호 확인"
+            android:textColor="@color/black"
             android:textSize="20dp"
             android:paddingBottom="5dp"
             android:paddingTop="50dp"/>
