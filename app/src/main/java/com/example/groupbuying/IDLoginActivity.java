@@ -17,6 +17,7 @@ public class IDLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_idlogin);
+        //
 
         LoginEmail = findViewById(R.id.edt_LoginEmail);
         LoginPW = findViewById(R.id.edt_LoginPW);
