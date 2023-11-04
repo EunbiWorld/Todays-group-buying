@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "45037379119",
+    "project_id": "todays-group-buying",
+    "storage_bucket": "todays-group-buying.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45037379119:android:c0c3695d0a9d35e74470da",
+        "android_client_info": {
+          "package_name": "com.example.groupbuying"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX4KbrlnPHNHt2I_U60P4NBpoRK4jo1D4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
