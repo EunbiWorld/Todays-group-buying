@@ -35,20 +35,20 @@ public class IDLoginActivity extends AppCompatActivity {
                 //입력한 email, password를 문자열로 추출
                 String userEmail = LoginEmail.getText().toString();
                 String userPassword = LoginPW.getText().toString();
-ㅁ
+
                 // Use Firebase Authentication to sign in the user
                 firebaseAuth.signInWithEmailAndPassword(userEmail, userPassword)
                         .addOnCompleteListener(IDLoginActivity.this, task -> {
                             if (task.isSuccessful()) {
                                 // 로그인 성공
-                                Toast.makeText(IDLoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(IDLoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
 
                                 //로그인 성공시 메인 화면으로 이동
                                 Intent intent = new Intent(IDLoginActivity.this, MainActivity.class);
                                 startActivity(intent);
                             } else {
                                 // 로그인 실패
-                                Toast.makeText(IDLoginActivity.this, "Login failed. Please try again.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(IDLoginActivity.this, "로그인 실패. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
                             }
                         });
             }
