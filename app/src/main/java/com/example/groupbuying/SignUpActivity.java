@@ -1,5 +1,6 @@
 package com.example.groupbuying;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -49,13 +50,15 @@ public class SignUpActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    // Registration success
-                                    Toast.makeText(SignUpActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
+                                    // 등록 성공
+                                    Toast.makeText(SignUpActivity.this, "등록 성공", Toast.LENGTH_SHORT).show();
 
                                     // You can navigate to the next screen or perform other actions here
+                                    Intent intent = new Intent(SignUpActivity.this, IDLoginActivity.class);
+                                    startActivity(intent);
                                 } else {
-                                    // Registration failed
-                                    Toast.makeText(SignUpActivity.this, "Registration failed. Please try again.", Toast.LENGTH_SHORT).show();
+                                    // 등록 실패
+                                    Toast.makeText(SignUpActivity.this, "등록 실패. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
