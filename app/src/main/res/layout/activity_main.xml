@@ -44,8 +44,31 @@
     </androidx.appcompat.widget.Toolbar>
 
     <!-- 메인 콘텐츠 영역-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <!-- 여기에 상품 정보를 나타내는 TextView 위젯 추가 -->
+    <TextView
+        android:id="@+id/productNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Name: "
+        android:textSize="18sp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/priceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price: "
+        android:textSize="18sp"
+        android:layout_marginTop="8dp" />
+    </LinearLayout>
     <!-- 각 Fragment 공간 -->
 
+    <!-- BottomNavigationView -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
         android:name="com.example.groupbuying.fragment.HomeFragment"
@@ -57,7 +80,7 @@
         android:layout_marginBottom="-3dp"
         tools:layout="@layout/fragment_home" />
 
-    <!-- BottomNavigationView -->
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavView"
         android:layout_width="match_parent"
