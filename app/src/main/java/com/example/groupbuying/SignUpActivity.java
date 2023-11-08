@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.groupbuying.network.DoneSignUpActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -54,7 +55,7 @@ public class SignUpActivity extends AppCompatActivity {
                                     Toast.makeText(SignUpActivity.this, "등록 성공", Toast.LENGTH_SHORT).show();
 
                                     // You can navigate to the next screen or perform other actions here
-                                    Intent intent = new Intent(SignUpActivity.this, IDLoginActivity.class);
+                                    Intent intent = new Intent(SignUpActivity.this, DoneSignUpActivity.class);
                                     startActivity(intent);
                                 } else {
                                     // 등록 실패
