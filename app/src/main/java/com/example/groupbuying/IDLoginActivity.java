@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,15 @@ public class IDLoginActivity extends AppCompatActivity {
         btn_Login = findViewById(R.id.btn_DoLogin);
 
         firebaseAuth = FirebaseAuth.getInstance();
+
+        //뒤로가기 버튼 클릭시 로그인,회원가입 선택 화면으로 이동
+        ImageButton BackButton = (ImageButton) findViewById(R.id.btn_back);
+        BackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish(); // 현재 액티비티를 종료하여 이전 화면으로 돌아갑니다.
+            }
+        });
 
         //로그인 버튼 클릭시 동작
         btn_Login.setOnClickListener(new View.OnClickListener() {
