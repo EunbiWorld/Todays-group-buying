@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -47,6 +48,18 @@ public class SignUpActivity extends AppCompatActivity {
                 finish(); // 현재 액티비티를 종료하여 이전 화면으로 돌아갑니다.
             }
         });
+
+        //계정이 있나요? 텍스트 클릭시 회원가입 페이지로 이동
+        TextView loginbtn = (TextView) findViewById(R.id.txt_Loginbtn);
+        loginbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), IDLoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
         Signup.setOnClickListener(new View.OnClickListener() {
             @Override
