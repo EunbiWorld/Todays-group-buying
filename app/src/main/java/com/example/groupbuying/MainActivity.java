@@ -66,10 +66,11 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
 
+        // 현재 테스트용입니다.
         // Firestore 경로를 설정합니다.
         String productPath = "products/Fruit/apple/5YOX6UTkuotk4J37XRP8"; // 원하는 제품 경로로 변경해주세요.
 
-// 경로에 해당하는 데이터 가져오기
+        // 경로에 해당하는 데이터 가져오기
         db.document(productPath)
                 .get()
                 .addOnSuccessListener(documentSnapshot -> {
