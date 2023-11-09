@@ -12,13 +12,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.groupbuying.network.DoneSignUpActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
-
-import com.example.groupbuying.R;
 
 public class SignUpActivity extends AppCompatActivity {
     private EditText Name, Nickname, Email, Password, CurrentPW, PhoneNum;

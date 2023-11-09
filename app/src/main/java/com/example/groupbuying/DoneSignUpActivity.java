@@ -1,4 +1,4 @@
-package com.example.groupbuying.network;
+package com.example.groupbuying;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.groupbuying.LoginActivity;
+import com.example.groupbuying.MainActivity;
 import com.example.groupbuying.R;
 
 public class DoneSignUpActivity extends AppCompatActivity {

@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".network.DoneSignUpActivity"
+            android:name=".DoneSignUpActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
