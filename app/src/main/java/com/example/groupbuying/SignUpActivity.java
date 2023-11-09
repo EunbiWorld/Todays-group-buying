@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -14,8 +16,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
-
-import com.example.groupbuying.R;
 
 public class SignUpActivity extends AppCompatActivity {
     private EditText Name, Nickname, Email, Password, CurrentPW, PhoneNum;
@@ -36,6 +36,28 @@ public class SignUpActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+
+        //뒤로가기 버튼 클릭시 로그인,회원가입 선택 화면으로 이동
+        ImageButton BackButton = (ImageButton) findViewById(R.id.btn_back);
+        BackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish(); // 현재 액티비티를 종료하여 이전 화면으로 돌아갑니다.
+            }
+        });
+
+        //계정이 있나요? 텍스트 클릭시 회원가입 페이지로 이동
+        TextView loginbtn = (TextView) findViewById(R.id.txt_Loginbtn);
+        loginbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), IDLoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
         Signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +76,7 @@ public class SignUpActivity extends AppCompatActivity {
                                     Toast.makeText(SignUpActivity.this, "등록 성공", Toast.LENGTH_SHORT).show();
 
                                     // You can navigate to the next screen or perform other actions here
-                                    Intent intent = new Intent(SignUpActivity.this, IDLoginActivity.class);
+                                    Intent intent = new Intent(SignUpActivity.this, DoneSignUpActivity.class);
                                     startActivity(intent);
                                 } else {
                                     // 등록 실패

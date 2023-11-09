@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +30,15 @@ public class IDLoginActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+        //뒤로가기 버튼 클릭시 로그인,회원가입 선택 화면으로 이동
+        ImageButton BackButton = (ImageButton) findViewById(R.id.btn_back);
+        BackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish(); // 현재 액티비티를 종료하여 이전 화면으로 돌아갑니다.
+            }
+        });
+
         //로그인 버튼 클릭시 동작
         btn_Login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +62,28 @@ public class IDLoginActivity extends AppCompatActivity {
                                 Toast.makeText(IDLoginActivity.this, "로그인 실패. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
                             }
                         });
+            }
+        });
+
+        // 비밀번호 찾기 텍스트 클릭시 비밀번호 찾기 페이지로 이동
+        TextView findPWbtn = findViewById(R.id.txt_FindPWbtn); // ID를 정확하게 일치시킵니다.
+        findPWbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), FindPWActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        //계정이 없나요? 텍스트 클릭시 회원가입 페이지로 이동
+        TextView signupbtn = (TextView) findViewById(R.id.txt_SignUpbtn);
+        signupbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), SignUpActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
