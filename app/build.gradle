@@ -39,6 +39,8 @@ android {
 
 dependencies {
 
+    // 파이어스토어 인증 라이브러리
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.9.1'
     // 파이어베이스 BoM 가져오기
     implementation platform('com.google.firebase:firebase-bom:32.5.0')
     // bom 사용시 firebase 종속성 버전 지정 X
