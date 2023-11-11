@@ -6,69 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Toolbar -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/white">
-
-        <!-- 검색 창 레이아웃 -->
-        <RelativeLayout
-            android:layout_width="380dp"
-            android:layout_height="45dp">
-
-            <!-- 검색 입력 필드 -->
-            <EditText
-                android:id="@+id/searchEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/searchIcon"
-                android:hint="검색어를 입력하세요"
-                android:inputType="text"
-                android:maxLines="1"
-                android:background="@android:color/transparent"/>
-
-            <!-- 검색 입력 필드 오른쪽에 클리어 아이콘 -->
-            <ImageView
-                android:id="@+id/searchIcon"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/search"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="16dp"
-                android:visibility="gone"/>
-        </RelativeLayout>
-
-    </androidx.appcompat.widget.Toolbar>
-
-    <!-- 메인 콘텐츠 영역-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-    <!-- 여기에 상품 정보를 나타내는 TextView 위젯 추가 -->
-    <TextView
-        android:id="@+id/productNameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Product Name: "
-        android:textSize="18sp"
-        android:layout_marginTop="16dp" />
-
-    <TextView
-        android:id="@+id/priceTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Price: "
-        android:textSize="18sp"
-        android:layout_marginTop="8dp" />
-    </LinearLayout>
-    <!-- 각 Fragment 공간 -->
-
-    <!-- BottomNavigationView -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
         android:name="com.example.groupbuying.fragment.HomeFragment"
@@ -79,7 +16,6 @@
         android:layout_marginTop="3dp"
         android:layout_marginBottom="-3dp"
         tools:layout="@layout/fragment_home" />
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavView"
