@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.example.groupbuying.fragment.BulletinFragment;
 import com.example.groupbuying.fragment.HeartFragment;
 import com.example.groupbuying.fragment.HomeFragment;
+import com.example.groupbuying.fragment.LoginRequestFragment;
 import com.example.groupbuying.fragment.SettingFragment;
 import com.example.groupbuying.fragment.VideoFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -17,8 +18,10 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
+public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity"; // 로그 식별자
 
     private BottomNavigationView bottomNavigationView;
@@ -26,6 +29,12 @@ public class MainActivity extends AppCompatActivity {
 //    private CollectionReference productsRef = db.collection("products");
 //    private TextView productNameTextView;
 //    private TextView priceTextView;
+
+    private boolean isLoggedIn() {
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        return currentUser != null;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +59,17 @@ public class MainActivity extends AppCompatActivity {
             } else if (item.getItemId() == R.id.navigation_home) {
                 selectedFragment = new HomeFragment();
             } else if (item.getItemId() == R.id.navigation_heart) {
-                selectedFragment = new HeartFragment();
+                if (!isLoggedIn()) {
+                    selectedFragment = new LoginRequestFragment();
+                } else {
+                    selectedFragment = new HeartFragment();
+                }
             } else if (item.getItemId() == R.id.navigation_setting) {
-                selectedFragment = new SettingFragment();
+                if (!isLoggedIn()) {
+                    selectedFragment = new LoginRequestFragment();
+                } else {
+                    selectedFragment = new SettingFragment();
+                }
             }
 
             // Fragment를 교체

@@ -9,23 +9,11 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
-    private static final int SPLASH_TIME_OUT = 3000; // 3초
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-//        // 3초 후에 MainActivity로 전환
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        }, SPLASH_TIME_OUT);
-
 
         //로그인 버튼 클릭시 로그인 화면으로 이동
         Button loginbutton = (Button) findViewById(R.id.GoLoginButton);
