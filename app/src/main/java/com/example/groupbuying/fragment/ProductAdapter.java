@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.groupbuying.R;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
@@ -33,7 +34,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         Product product = productList.get(position);
         holder.productName.setText(product.getProductName());
-        holder.productPrice.setText(String.valueOf(product.getProductPrice()));
+
+        int price = Integer.parseInt(product.getPrice().replaceAll(",", ""));
+        String formattedPrice = NumberFormat.getInstance().format(price);
+
+        holder.productPrice.setText(formattedPrice + "원");
     }
 
     @Override
@@ -44,11 +49,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     class ProductViewHolder extends RecyclerView.ViewHolder {
         TextView productName;
         TextView productPrice;
+        TextView productDescription;
 
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
             productName = itemView.findViewById(R.id.product_name);
             productPrice = itemView.findViewById(R.id.product_price);
+            productDescription = itemView.findViewById(R.id.product_description);
         }
     }
 }
