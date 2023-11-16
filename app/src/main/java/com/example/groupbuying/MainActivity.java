@@ -4,8 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import android.util.Log;
-import android.widget.TextView;
+
 import com.example.groupbuying.fragment.BulletinFragment;
 import com.example.groupbuying.fragment.HeartFragment;
 import com.example.groupbuying.fragment.HomeFragment;
@@ -13,10 +12,7 @@ import com.example.groupbuying.fragment.LoginRequestFragment;
 import com.example.groupbuying.fragment.SettingFragment;
 import com.example.groupbuying.fragment.VideoFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
+
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,11 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity"; // 로그 식별자
 
     private BottomNavigationView bottomNavigationView;
-//    private FirebaseFirestore db = FirebaseFirestore.getInstance();
-//    private CollectionReference productsRef = db.collection("products");
-//    private TextView productNameTextView;
-//    private TextView priceTextView;
-
     private boolean isLoggedIn() {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         return currentUser != null;
@@ -42,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNavigationView = findViewById(R.id.bottomNavView);
-//        pdname = findViewById(R.id.pdname);
-//        pdprice = findViewById(R.id.pdprice);
 
         // 초기 선택 항목 설정
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
@@ -82,27 +71,5 @@ public class MainActivity extends AppCompatActivity {
 
             return true;
         });
-
-//        // 현재 테스트용입니다.
-//        // Firestore 경로를 설정합니다.
-//        String productPath = "products/Fruit/apple/5YOX6UTkuotk4J37XRP8"; // 원하는 제품 경로로 변경해주세요.
-//
-//        // 경로에 해당하는 데이터 가져오기
-//        db.document(productPath)
-//                .get()
-//                .addOnSuccessListener(documentSnapshot -> {
-//                    if (documentSnapshot.exists()) {
-//                        // 데이터가 존재하면 데이터를 추출하고 UI에 표시할 수 있습니다.
-//                        String productName = documentSnapshot.getString("name");
-//                        double price = documentSnapshot.getDouble("price");
-//                        pd_name.setText("Product Name: " + productName);
-//                        pd_price.setText("Price: " + String.valueOf(price));
-//                    } else {
-//                        Log.d(TAG, "Document does not exist");
-//                    }
-//                })
-//                .addOnFailureListener(e -> {
-//                    Log.e(TAG, "Error fetching data: " + e.getMessage());
-//                });
     }
 }
