@@ -3,4 +3,14 @@
     <string name="SettingTitle">TestText</string>
     <string name="SettingHelloName">Testtext</string>
     <string name="SettingEmail">test@test.com</string>
+    <string name="upload_button">이미지 업로드</string>
+    <string-array name="categories">
+        <item>Food</item>
+        <item>Sports</item>
+        <item>Life</item>
+        <item>Furniture</item>
+        <item>Child</item>
+        <item>Travel</item>
+    </string-array>
+
 </resources>

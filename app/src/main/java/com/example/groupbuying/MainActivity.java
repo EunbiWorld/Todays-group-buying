@@ -1,6 +1,8 @@
 package com.example.groupbuying;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -14,11 +16,17 @@ import com.example.groupbuying.fragment.VideoFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity"; // 로그 식별자
+
+
+    //상품 등록을 위한 코드(임시용입니다.)
+    private FloatingActionButton uploadButton;
+    //-----여기까지----
 
     private BottomNavigationView bottomNavigationView;
     private boolean isLoggedIn() {
@@ -31,6 +39,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        //상품등록을 위한 임시코드입니다.
+        uploadButton = findViewById(R.id.uploadButton);
+
+        uploadButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, BulletinActivity.class);
+            startActivity(intent);
+        });
+        //-----여기까지----
+
 
         bottomNavigationView = findViewById(R.id.bottomNavView);
 

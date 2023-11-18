@@ -17,6 +17,18 @@
         android:layout_marginBottom="-3dp"
         tools:layout="@layout/fragment_home" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/uploadButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="80dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/upload_button"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavView"
         android:layout_width="match_parent"
