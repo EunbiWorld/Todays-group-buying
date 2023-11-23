@@ -18,6 +18,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -45,7 +46,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         productList = view.findViewById(R.id.product_list);
-        productList.setLayoutManager(new LinearLayoutManager(getActivity()));
+        productList.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
         categoryScrollView = (HorizontalScrollView) view.findViewById(R.id.category_scroll_view);
 
