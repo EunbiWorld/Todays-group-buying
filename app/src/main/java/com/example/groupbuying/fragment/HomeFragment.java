@@ -52,15 +52,61 @@ public class HomeFragment extends Fragment {
 
         EditText searchBar = view.findViewById(R.id.search_bar);
 
-        // 이 부분 나중에 수정
         // 각 카테고리에 대해 클릭 리스너를 설정
-        TextView textRecommended = view.findViewById(R.id.textRecommended);
-        textRecommended.setOnClickListener(new View.OnClickListener() {
+        TextView textFood = view.findViewById(R.id.textFood);
+        textFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // "추천" 카테고리가 클릭되었을 때의 동작
+                // '요리' 카테고리가 클릭되었을 때의 동작
+                showCategoryProducts("Food");
             }
         });
+
+        // 'Child' 카테고리에 대한 클릭 리스너 설정
+        TextView textChild = view.findViewById(R.id.textChild);
+        textChild.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCategoryProducts("Child");
+            }
+        });
+
+// 'Furniture' 카테고리에 대한 클릭 리스너 설정
+        TextView textFurniture = view.findViewById(R.id.textFurniture);
+        textFurniture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCategoryProducts("Furniture");
+            }
+        });
+
+// 'Life' 카테고리에 대한 클릭 리스너 설정
+        TextView textLife = view.findViewById(R.id.textLife);
+        textLife.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCategoryProducts("Life");
+            }
+        });
+
+// 'Sports' 카테고리에 대한 클릭 리스너 설정
+        TextView textSports = view.findViewById(R.id.textSport);
+        textSports.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCategoryProducts("Sports");
+            }
+        });
+
+// 'Travel' 카테고리에 대한 클릭 리스너 설정
+        TextView textTravel = view.findViewById(R.id.textTravel);
+        textTravel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCategoryProducts("Travel");
+            }
+        });
+
 
         searchBar.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -78,8 +124,31 @@ public class HomeFragment extends Fragment {
         loadProducts();
         return view;
     }
+
     private void loadProducts() {
         db.collection("products")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            List<Product> products = new ArrayList<>();
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Product product = document.toObject(Product.class);
+                                products.add(product);
+                            }
+                            productAdapter = new ProductAdapter(getActivity(), products);
+                            productList.setAdapter(productAdapter);
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+    }
+
+    private void showCategoryProducts(String category) {
+        db.collection("products")
+                .whereEqualTo("category", category) // 'category'가 카테고리를 저장한 필드라고 가정합니다.
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

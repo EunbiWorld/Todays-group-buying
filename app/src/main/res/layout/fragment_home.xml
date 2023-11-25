@@ -96,7 +96,7 @@
                 android:textSize="20dp"
                 android:clickable="true"
                 android:layout_marginRight="20dp"
-                android:id="@+id/textParenting" />
+                android:id="@+id/textChild" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
                 android:textSize="20dp"
                 android:clickable="true"
                 android:layout_marginRight="20dp"
-                android:id="@+id/textHomeappliances" />
+                android:id="@+id/textFurniture" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
                 android:textSize="20dp"
                 android:clickable="true"
                 android:layout_marginRight="20dp"
-                android:id="@+id/textHobby" />
+                android:id="@+id/textTravel" />
         </LinearLayout>
 
     </HorizontalScrollView>
