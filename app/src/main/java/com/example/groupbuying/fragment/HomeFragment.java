@@ -32,6 +32,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class HomeFragment extends Fragment {
 
@@ -52,15 +53,16 @@ public class HomeFragment extends Fragment {
 
         EditText searchBar = view.findViewById(R.id.search_bar);
 
-        // 이 부분 나중에 수정
-        // 각 카테고리에 대해 클릭 리스너를 설정
-        TextView textRecommended = view.findViewById(R.id.textRecommended);
-        textRecommended.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // "추천" 카테고리가 클릭되었을 때의 동작
-            }
-        });
+        // 카테고리 'TextView'를 클릭 리스너와 연결
+        setCategoryClickListener(view, R.id.textFood, "Food");
+        setCategoryClickListener(view, R.id.textChild, "Child");
+        setCategoryClickListener(view, R.id.textFurniture, "Furniture");
+        setCategoryClickListener(view, R.id.textLife, "Life");
+        setCategoryClickListener(view, R.id.textSport, "Sports");
+        setCategoryClickListener(view, R.id.textTravel, "Travel");
+        setCategoryClickListener(view, R.id.textNew, null);
+        setCategoryClickListener(view, R.id.textRecommended, null);
+        setCategoryClickListener(view, R.id.textBest, null);
 
         searchBar.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -75,22 +77,66 @@ public class HomeFragment extends Fragment {
                 return false;
             }
         });
-        loadProducts();
+
+        // 처음에는 추천 상품을 보여줍니다.
+        showRandomProducts(20);
+
         return view;
     }
-    private void loadProducts() {
+
+    private void setCategoryClickListener(View view, int textViewId, String category) {
+        TextView textView = view.findViewById(textViewId);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (category != null) {
+                    showCategoryProducts(category);
+                } else {
+                    showRandomProducts(20);
+                }
+            }
+        });
+    }
+
+    private void showCategoryProducts(String category) {
+        db.collection("products")
+                .whereEqualTo("category", category)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            setProductList(task);
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+    }
+
+    private void showRandomProducts(int count) {
         db.collection("products")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            List<Product> products = new ArrayList<>();
+                            List<Product> allProducts = new ArrayList<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Product product = document.toObject(Product.class);
-                                products.add(product);
+                                allProducts.add(product);
                             }
-                            productAdapter = new ProductAdapter(getActivity(), products);
+
+                            // 모든 상품 중에서 랜덤하게 상품을 선택
+                            List<Product> selectedProducts = new ArrayList<>();
+                            Random rand = new Random();
+                            for (int i = 0; i < count && !allProducts.isEmpty(); i++) {
+                                int randomIndex = rand.nextInt(allProducts.size());
+                                selectedProducts.add(allProducts.remove(randomIndex));
+                            }
+
+                            // 선택된 상품들을 RecyclerView에 표시
+                            productAdapter = new ProductAdapter(getActivity(), selectedProducts);
                             productList.setAdapter(productAdapter);
                         } else {
                             Log.w(TAG, "Error getting documents.", task.getException());
@@ -101,23 +147,27 @@ public class HomeFragment extends Fragment {
 
     private void searchProducts(String query) {
         db.collection("products")
-                .whereEqualTo("productName", query) // 'productName'이 상품 이름을 저장한 필드라고 가정합니다.
+                .whereEqualTo("productName", query)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            List<Product> products = new ArrayList<>();
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Product product = document.toObject(Product.class);
-                                products.add(product);
-                            }
-                            productAdapter = new ProductAdapter(getActivity(), products);
-                            productList.setAdapter(productAdapter);
+                            setProductList(task);
                         } else {
                             Log.w(TAG, "Error getting documents.", task.getException());
                         }
                     }
                 });
+    }
+
+    private void setProductList(@NonNull Task<QuerySnapshot> task) {
+        List<Product> products = new ArrayList<>();
+        for (QueryDocumentSnapshot document : task.getResult()) {
+            Product product = document.toObject(Product.class);
+            products.add(product);
+        }
+        productAdapter = new ProductAdapter(getActivity(), products);
+        productList.setAdapter(productAdapter);
     }
 }
