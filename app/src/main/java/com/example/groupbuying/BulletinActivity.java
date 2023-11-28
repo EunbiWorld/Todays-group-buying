@@ -127,7 +127,7 @@ public class BulletinActivity extends AppCompatActivity {
         }
 
         // 고유한 이름 생성
-        String uniqueName = category + "_" + productName;
+        String uniqueName = "(bulletins)" + category + "_" + productName;
         StorageReference storageRef = storage.getReference().child(uniqueName);
 
         // 이미지가 선택되었을 때만 업로드
@@ -155,7 +155,7 @@ public class BulletinActivity extends AppCompatActivity {
                             product.put("num", num);
                             product.put("imageUrl", uri.toString());
 
-                            db.collection("products").document(productName).set(product)
+                            db.collection("bulletins").document(productName).set(product) // Firestore에 저장하는 코드 수정
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
