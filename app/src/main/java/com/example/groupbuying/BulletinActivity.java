@@ -46,7 +46,7 @@ public class BulletinActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_bulletin);
+        setContentView(R.layout.activity_bulletin);
 
         etProductName = findViewById(R.id.etProductName);
         etPrice = findViewById(R.id.etPrice);

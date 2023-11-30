@@ -41,6 +41,7 @@
         <activity android:name=".DonePWActivity"/>
         <activity android:name=".DoneSignUpActivity"/>
         <activity android:name=".BulletinActivity" />
+        <activity android:name=".ProductInfoActivity" />
     </application>
 
 </manifest>

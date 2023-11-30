@@ -21,7 +21,7 @@
             android:id="@+id/etPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="가격"
+            android:hint="원가"
             android:inputType="number" />
 
         <TextView
@@ -40,7 +40,7 @@
             android:id="@+id/etDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="설명"
+            android:hint="글쓰기"
             android:inputType="textMultiLine" />
 
         <EditText
@@ -59,10 +59,11 @@
             android:scaleType="centerCrop" />
 
         <!-- 이미지 업로드 버튼 -->
-        <ImageView
-            android:id="@+id/UploadImage"
+        <Button
+            android:id="@+id/btnUploadImage"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="이미지 업로드" />
 
         <!-- 정보 저장 버튼 -->
         <Button
