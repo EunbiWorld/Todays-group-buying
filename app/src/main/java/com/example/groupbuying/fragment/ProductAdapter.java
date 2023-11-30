@@ -1,6 +1,7 @@
 package com.example.groupbuying.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.groupbuying.ProductInfoActivity;
 import com.example.groupbuying.R;
 
 import java.text.NumberFormat;
@@ -44,6 +46,17 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         // Glide를 사용하여 이미지 로드
         Glide.with(context).load(product.getImageUrl()).into(holder.productImage);
+
+        // 아이템 클릭 리스너 설정
+        // 아이템 클릭 리스너 설정
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ProductInfoActivity.class);
+                intent.putExtra("product", product); // 'Product' 클래스가 'Serializable' 또는 'Parcelable'을 구현
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
