@@ -136,7 +136,7 @@ public class HomeFragment extends Fragment {
                             }
 
                             // 선택된 상품들을 RecyclerView에 표시
-                            productAdapter = new ProductAdapter(getActivity(), selectedProducts);
+                            productAdapter = new ProductAdapter(getActivity(), selectedProducts, R.layout.product_item);
                             productList.setAdapter(productAdapter);
                         } else {
                             Log.w(TAG, "Error getting documents.", task.getException());
@@ -167,7 +167,7 @@ public class HomeFragment extends Fragment {
             Product product = document.toObject(Product.class);
             products.add(product);
         }
-        productAdapter = new ProductAdapter(getActivity(), products);
+        productAdapter = new ProductAdapter(getActivity(), products, R.layout.product_item);
         productList.setAdapter(productAdapter);
     }
 }

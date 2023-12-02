@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,6 +33,17 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
                 startActivity(intent); // Intent를 시작하여 새로운 화면으로 전환
+            }
+        });
+
+        //게스트 로그인 버튼 클릭시 메인 홈 화면으로 이동
+        TextView guestbutton = (TextView) findViewById(R.id.GoGuestLoginButton);
+        guestbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

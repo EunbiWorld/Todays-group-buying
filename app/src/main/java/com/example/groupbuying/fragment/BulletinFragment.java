@@ -38,7 +38,7 @@ public class BulletinFragment extends Fragment {
         rvBulletin = view.findViewById(R.id.rv_bulletin);
         rvBulletin.setLayoutManager(new LinearLayoutManager(getContext()));
         productList = new ArrayList<>();
-        adapter = new ProductAdapter(getContext(), productList);
+        adapter = new ProductAdapter(getActivity(), productList, R.layout.bulletin_item);
         rvBulletin.setAdapter(adapter);
 
         loadBulletins();

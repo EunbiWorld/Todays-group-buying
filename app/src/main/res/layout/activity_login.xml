@@ -72,4 +72,12 @@
         android:backgroundTint="@color/button_GoSignup"
         android:layout_marginBottom="12dp" />
 
+    <TextView
+        android:id="@+id/GoGuestLoginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="비로그인으로 둘러보기"
+        android:textColor="@color/white" />
+
 </LinearLayout>

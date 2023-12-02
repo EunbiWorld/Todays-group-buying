@@ -21,16 +21,20 @@ import java.util.List;
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
     private Context context;
     private List<Product> productList;
+    private int layoutId; // 추가
 
-    public ProductAdapter(Context context, List<Product> productList) {
+
+    public ProductAdapter(Context context, List<Product> productList, int layoutId) {   //추가
         this.context = context;
         this.productList = productList;
+        this.layoutId = layoutId; // 추가
+
     }
 
     @NonNull
     @Override
     public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.product_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(layoutId, parent, false);  //수정함
         return new ProductViewHolder(view);
     }
 
