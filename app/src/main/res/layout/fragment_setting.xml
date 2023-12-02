@@ -264,6 +264,7 @@
                     android:textStyle="bold"
                     android:text="알림 설정"/>
                 <TextView
+                    android:id="@+id/LogoutButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
