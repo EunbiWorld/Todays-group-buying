@@ -116,6 +116,13 @@
             android:text="리뷰00" />
 
         <Button
+            android:id="@+id/approveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="게시글 허용" />
+
+        <Button
             android:id="@+id/btn_buy_original"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

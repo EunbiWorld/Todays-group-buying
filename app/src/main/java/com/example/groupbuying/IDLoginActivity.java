@@ -11,6 +11,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import android.content.Intent;
 
 
@@ -52,11 +55,29 @@ public class IDLoginActivity extends AppCompatActivity {
                         .addOnCompleteListener(IDLoginActivity.this, task -> {
                             if (task.isSuccessful()) {
                                 // 로그인 성공
-                                Toast.makeText(IDLoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
+                                FirebaseUser user = firebaseAuth.getCurrentUser();
+                                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                db.collection("users").document(user.getUid())
+                                        .get()
+                                        .addOnCompleteListener(adminCheckTask -> {
+                                            if (adminCheckTask.isSuccessful()) {
+                                                DocumentSnapshot document = adminCheckTask.getResult();
+                                                if (document.exists()) {
+                                                    boolean isAdmin = document.getBoolean("admin");
+                                                    if (isAdmin) {
+                                                        // 관리자인 경우
+                                                        Toast.makeText(IDLoginActivity.this, "관리자로 로그인 성공", Toast.LENGTH_SHORT).show();
+                                                    } else {
+                                                        // 일반 사용자인 경우
+                                                        Toast.makeText(IDLoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
+                                                    }
 
-                                //로그인 성공시 메인 화면으로 이동
-                                Intent intent = new Intent(IDLoginActivity.this, MainActivity.class);
-                                startActivity(intent);
+                                                    //로그인 성공시 메인 화면으로 이동
+                                                    Intent intent = new Intent(IDLoginActivity.this, MainActivity.class);
+                                                    startActivity(intent);
+                                                }
+                                            }
+                                        });
                             } else {
                                 // 로그인 실패
                                 Toast.makeText(IDLoginActivity.this, "로그인 실패. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();

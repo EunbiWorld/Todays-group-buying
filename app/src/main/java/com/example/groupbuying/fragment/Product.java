@@ -3,6 +3,7 @@ package com.example.groupbuying.fragment;
 import java.io.Serializable;
 
 public class Product implements Serializable {
+    private String id;
     private String productName;
     private String productDescription;
     private String price;
@@ -13,6 +14,15 @@ public class Product implements Serializable {
 
     // 기본 생성자
     public Product() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    // 문서 ID를 설정하는 setter 메소드
+    public void setId(String id) {
+        this.id = id;
     }
 
     // 모든 필드를 인자로 받는 생성자
