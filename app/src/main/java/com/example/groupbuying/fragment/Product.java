@@ -11,9 +11,18 @@ public class Product implements Serializable {
     private String description;
     private String num;
     private String imageUrl;  // 이미지 URL을 저장하는 필드 추가
+    private boolean visible;  // 'visible' 필드 추가
 
-    // 기본 생성자
     public Product() {
+    }
+
+    // 'visible' 필드에 대한 getter 및 setter 메서드 추가
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 
     public String getId() {

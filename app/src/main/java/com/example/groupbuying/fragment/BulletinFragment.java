@@ -11,12 +11,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.groupbuying.fragment.Product;
-import com.example.groupbuying.fragment.ProductAdapter;
 import com.example.groupbuying.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -97,36 +94,6 @@ public class BulletinFragment extends Fragment {
                     } else {
                         // Handle the failure
                     }
-                });
-    }
-
-    private void approveBulletin(String bulletinId) {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        db.collection("bulletins").document(bulletinId)
-                .update("visible", true)
-                .addOnSuccessListener(aVoid -> {
-                    // 게시글이 성공적으로 허용되었습니다.
-                    // 필요한 추가 동작을 여기에 작성하세요.
-                })
-                .addOnFailureListener(e -> {
-                    // 게시글을 허용하는데 실패했습니다.
-                    // 실패 사유를 사용자에게 알리거나, 로그를 남기세요.
-                });
-    }
-
-    private void disapproveBulletin(String bulletinId) {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        db.collection("bulletins").document(bulletinId)
-                .update("visible", false)
-                .addOnSuccessListener(aVoid -> {
-                    // 게시글이 성공적으로 비허용되었습니다.
-                    // 필요한 추가 동작을 여기에 작성하세요.
-                })
-                .addOnFailureListener(e -> {
-                    // 게시글을 비허용하는데 실패했습니다.
-                    // 실패 사유를 사용자에게 알리거나, 로그를 남기세요.
                 });
     }
 }

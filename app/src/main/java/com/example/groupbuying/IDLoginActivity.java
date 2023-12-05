@@ -16,7 +16,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import android.content.Intent;
 
-
 public class IDLoginActivity extends AppCompatActivity {
     private EditText LoginEmail, LoginPW;
     private Button btn_Login;
@@ -33,12 +32,11 @@ public class IDLoginActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        //뒤로가기 버튼 클릭시 로그인,회원가입 선택 화면으로 이동
         ImageButton BackButton = (ImageButton) findViewById(R.id.btn_back);
         BackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish(); // 현재 액티비티를 종료하여 이전 화면으로 돌아갑니다.
+                finish();
             }
         });
 

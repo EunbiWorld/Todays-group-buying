@@ -40,7 +40,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
-        Product product = productList.get(position);
+        final Product product = productList.get(position);
         holder.productName.setText(product.getProductName());
 
         int price = Integer.parseInt(product.getPrice().replaceAll(",", ""));

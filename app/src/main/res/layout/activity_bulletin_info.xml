@@ -29,15 +29,6 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="25sp"/>
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="0.1"
-            android:layout_marginLeft="8dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/shoppingbag_blue"
-            android:background="@android:color/transparent"/>
     </LinearLayout>
 
     <ScrollView
@@ -113,23 +104,23 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawablePadding="8dp"
-            android:text="리뷰00" />
+            android:text="댓글00" />ㄴ
+
+        <Button
+            android:id="@+id/approveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="게시글 허용" />
 
         <Button
             android:id="@+id/btn_buy_original"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="원가 구매하기" />
+            android:text="추천" />
 
-        <Button
-            android:id="@+id/btn_buy_discount"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="할인가 구매하기" />
 
     </LinearLayout>
 
 </RelativeLayout>
-

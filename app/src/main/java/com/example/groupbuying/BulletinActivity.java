@@ -42,7 +42,6 @@ public class BulletinActivity extends AppCompatActivity {
     private Uri imageUri;
     private Spinner spCategory; // Spinner 추가
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,7 +116,6 @@ public class BulletinActivity extends AppCompatActivity {
         //saveProduct() 메소드에서 선택된 카테고리 가져오기
         String category = spCategory.getSelectedItem().toString();
 
-
         // 필수 입력 항목 확인
         if (TextUtils.isEmpty(productName) || TextUtils.isEmpty(price)
                 || TextUtils.isEmpty(category) || TextUtils.isEmpty(description)
@@ -154,6 +152,7 @@ public class BulletinActivity extends AppCompatActivity {
                             product.put("description", description);
                             product.put("num", num);
                             product.put("imageUrl", uri.toString());
+                            product.put("visible", false);  // visible 필드 추가
 
                             db.collection("bulletins").document(productName).set(product) // Firestore에 저장하는 코드 수정
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {

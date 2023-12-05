@@ -23,7 +23,6 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity"; // 로그 식별자
 
-
     //상품 등록을 위한 코드(임시용입니다.)
     private FloatingActionButton uploadButton;
     //-----여기까지----
