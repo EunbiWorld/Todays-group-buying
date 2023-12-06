@@ -33,9 +33,9 @@ public class ProductInfoActivity extends AppCompatActivity {
         // 뷰에 상품 정보를 설정합니다.
         productNameTextView.setText(product.getProductName());
         productDescriptionTextView.setText(product.getProductDescription());
-        productPriceTextView.setText(product.getPrice() + "원");
-        productCategoryTextView.setText(product.getCategory());
-        productNumTextView.setText(product.getNum());
+        productPriceTextView.setText("가격 : " + product.getPrice() + "원");
+        productCategoryTextView.setText("카테고리 : " + product.getCategory());
+        productNumTextView.setText("수량 : " + product.getNum());
         Glide.with(this).load(product.getImageUrl()).into(productImageView);
 
     }

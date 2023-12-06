@@ -55,14 +55,9 @@
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:layout_marginTop="16dp" />
-
-            <TextView
-                android:id="@+id/product_description_text_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/product_price_text_view"
@@ -70,14 +65,16 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="8dp"
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/product_category_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="8dp"
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/product_num_text_view"
@@ -85,6 +82,28 @@
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#A1B5B5B5"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:text="내용"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/product_description_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:textColor="#000000" />
 
         </LinearLayout>
     </ScrollView>
@@ -104,21 +123,24 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawablePadding="8dp"
-            android:text="댓글00" />
+            android:text="댓글 00"
+            android:gravity="center_horizontal" />
 
         <Button
             android:id="@+id/approveButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="게시글 허용" />
+            android:text="게시글 허용"
+            android:backgroundTint="@color/button_GoLogin" />
 
         <Button
             android:id="@+id/btn_buy_original"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="추천" />
+            android:text="추천"
+            android:backgroundTint="@color/button_GoSignup" />
 
 
     </LinearLayout>

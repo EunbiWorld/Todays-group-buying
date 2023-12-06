@@ -37,8 +37,8 @@ public class BulletinInfoActivity extends AppCompatActivity {
 
         productNameTextView.setText(bulletin.getProductName());
         productDescriptionTextView.setText(bulletin.getDescription());
-        productPriceTextView.setText(bulletin.getPrice() + "원");
-        productCategoryTextView.setText(bulletin.getCategory());
+        productPriceTextView.setText("가격 : " + bulletin.getPrice() + "원");
+        productCategoryTextView.setText("카테고리 : " + bulletin.getCategory());
         Glide.with(this).load(bulletin.getImageUrl()).into(productImageView);
 
         approveButton = findViewById(R.id.approveButton); // '허용' 버튼과 연결

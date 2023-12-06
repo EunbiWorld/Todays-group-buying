@@ -12,11 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class ReviewActivity extends AppCompatActivity {
-
-    String[] items1 = {"원룸/빌라/주택", "오피스텔"};
-    String[] items2 = {"2018년까지", "2019년까지", "2020년까지", "2021년까지", "2022년까지", "2023년까지"};
-    String[] items3 = {"반지하", "1층", "2층", "3층", "4층", "그 이상"};
-
+    
     AutoCompleteTextView residenceTypes;
     AutoCompleteTextView residenceYears;
     AutoCompleteTextView floorLevels;
