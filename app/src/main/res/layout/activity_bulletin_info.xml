@@ -104,7 +104,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawablePadding="8dp"
-            android:text="댓글00" />ㄴ
+            android:text="댓글00" />
 
         <Button
             android:id="@+id/approveButton"
